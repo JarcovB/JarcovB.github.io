@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/JarcovB.github.io/static/css/main.83444184.css",
+    "main.js": "/JarcovB.github.io/static/js/main.31124026.js",
+    "static/js/453.92d80d59.chunk.js": "/JarcovB.github.io/static/js/453.92d80d59.chunk.js",
+    "static/media/logo.svg": "/JarcovB.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/JarcovB.github.io/index.html",
+    "main.83444184.css.map": "/JarcovB.github.io/static/css/main.83444184.css.map",
+    "main.31124026.js.map": "/JarcovB.github.io/static/js/main.31124026.js.map",
+    "453.92d80d59.chunk.js.map": "/JarcovB.github.io/static/js/453.92d80d59.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83444184.css",
+    "static/js/main.31124026.js"
+  ]
+}
