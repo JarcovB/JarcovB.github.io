@@ -28,6 +28,38 @@
   color: #61dafb;
 }
 
+.light-theme {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+.dark-theme {
+  --bg-color: #1e1e1e;
+  --text-color: #f5f5f5;
+}
+
+body, .App, .main-content {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link {
+  color: var(--text-color);
+}
+
+.sidebar .btn {
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
