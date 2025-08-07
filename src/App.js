@@ -30,7 +30,7 @@ function App() {
           setDarkMode={setDarkMode}
         />
 
-        <div className="main-content">
+        <div className={`main-content${collapsed ? ' collapsed' : ''}`}>
           <Routes>
             <Route path="/" element={<Message />} />
             <Route path="/about" element={<About />} />

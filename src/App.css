@@ -38,7 +38,7 @@
   --text-color: #f5f5f5;
 }
 
-body, .App, .main-content {
+body, .App {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -59,6 +59,19 @@ body, .App, .main-content {
   border-color: var(--text-color);
 }
 
+/* Voeg toe of pas aan: */
+.main-content {
+   background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  transition: margin-left 0.3s;
+  margin-left: 200px; /* breedte van sidebar als niet collapsed */
+}
+
+.sidebar.collapsed + .main-content {
+  margin-left: 50px; /* breedte van sidebar als collapsed */
+}
 
 @keyframes App-logo-spin {
   from {

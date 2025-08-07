@@ -36,3 +36,13 @@
 .collapsed + .sidebar-toggle {
   left: 50px;
 }
+/* Voeg onderaan toe: */
+.light-theme .sidebar,
+.light-theme .sidebar-toggle {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.light-theme .sidebar .nav-link {
+  color: #343a40;
+}
