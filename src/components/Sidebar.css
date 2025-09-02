@@ -23,7 +23,7 @@
 .sidebar-toggle {
   position: fixed;
   top: 10px;
-  left: 200px; /* schuift automatisch mee met sidebar */
+  left: 200px;   
   z-index: 1100;
   background-color: #343a40;
   color: white;
@@ -36,7 +36,6 @@
 .collapsed + .sidebar-toggle {
   left: 50px;
 }
-/* Voeg onderaan toe: */
 .light-theme .sidebar,
 .light-theme .sidebar-toggle {
   background-color: #f8f9fa;
@@ -46,3 +45,12 @@
 .light-theme .sidebar .nav-link {
   color: #343a40;
 }
+
+.modal {
+  z-index: 1050; /* modal bovenaan */
+}
+
+.modal-backdrop {
+  z-index: 1040; /* backdrop eronder */
+}
+

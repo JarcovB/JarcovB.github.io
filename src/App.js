@@ -15,7 +15,6 @@ function App() {
   return (
     <Router>
       <div className={darkMode ? 'dark-theme' : 'light-theme'}>
-        {/* Toggle knop buiten de sidebar */}
         <button
           className="sidebar-toggle"
           style={{ left: collapsed ? '5px' : '150px' }}
