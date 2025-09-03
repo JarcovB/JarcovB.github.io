@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './Sidebar.css';
 import Calculator from "./Calculator";
+import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from 'react-router-dom';
 
@@ -31,31 +32,19 @@ function Sidebar({ collapsed, darkMode, setDarkMode }) {
         </li>
           </ul>
           
-           {showCalculator && (
-        <div className="modal fade show d-block" tabIndex="-1">
-          <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Calculator</h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  onClick={() => setShowCalculator(false)}
-                ></button>
-              </div>
-              <div className="modal-body">
-                <Calculator />
-              </div>
-            </div>
-          </div>
-
-          {/* Achtergrond klikbaar maken */}
-          <div
-            className="modal-backdrop fade show"
-            onClick={() => setShowCalculator(false)}
-          ></div>
-        </div>
-      )}
+          <Modal
+        show={showCalculator}
+        onHide={() => setShowCalculator(false)}
+        centered
+        size="lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Calculator</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Calculator />
+        </Modal.Body>
+      </Modal>
 
       <div className="theme-toggle-wrapper mt-auto">
   <div className="form-check form-switch mt-4">

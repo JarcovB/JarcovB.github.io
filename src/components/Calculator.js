@@ -15,6 +15,7 @@ function Calculator() {
   const handleCalculate = () => {
     try {
       // ⚠️ eval is voor demo, later kun je dit zelf parsen!
+      // eslint-disable-next-line 
       setInput(eval(input).toString());
     } catch (error) {
       setInput("Error");

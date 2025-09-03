@@ -46,11 +46,3 @@
   color: #343a40;
 }
 
-.modal {
-  z-index: 1050; /* modal bovenaan */
-}
-
-.modal-backdrop {
-  z-index: 1040; /* backdrop eronder */
-}
-
