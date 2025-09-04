@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './Sidebar.css';
 import Calculator from "./Calculator";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from 'react-router-dom';
 
@@ -36,7 +36,8 @@ function Sidebar({ collapsed, darkMode, setDarkMode }) {
         show={showCalculator}
         onHide={() => setShowCalculator(false)}
         centered
-        size="lg"
+        dialogClassName="calculator-modal"
+        keyboard={true}
       >
         <Modal.Header closeButton>
           <Modal.Title>Calculator</Modal.Title>

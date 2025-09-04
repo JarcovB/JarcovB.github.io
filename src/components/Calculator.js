@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./Calculator.css";
 
 function Calculator() {
   const [input, setInput] = useState("");
@@ -12,67 +13,98 @@ function Calculator() {
     setInput("");
   };
 
+  const handleBackspace = () => {
+  setInput(input.slice(0, -1));
+};
+
   const handleCalculate = () => {
     try {
       // ⚠️ eval is voor demo, later kun je dit zelf parsen!
       // eslint-disable-next-line 
       setInput(eval(input).toString());
-    } catch (error) {
+    } 
+    catch (error) {
       setInput("Error");
     }
   };
 
+useEffect(() => {
+  const handleKeyPress = (event) => {
+    if (!isNaN(event.key) || ["+", "-", "*", "/", "%", "."].includes(event.key)) {
+      handleClick(event.key);
+    } else if (event.key === "Enter") {
+      handleCalculate();
+    } else if (event.key === "Backspace") {
+      handleBackspace();
+    } 
+  };
+
+  window.addEventListener("keydown", handleKeyPress);
+
+  return () => {
+    window.removeEventListener("keydown", handleKeyPress);
+  };
+});
+
   return (
-    <div className="container mt-5" style={{ maxWidth: "400px" }}>
-      <div className="card shadow">
-        <div className="card-body">
-          <input
-            type="text"
-            className="form-control mb-3 text-end"
+    <div className="calculator">
+      
+            <input
+              type="text"
+            className="calc-display"
             value={input}
             readOnly
           />
           <div className="row g-2">
-            {["7", "8", "9", "/"].map((btn) => (
+             {["C", "%", "⌫", "/"].map((btn) => (
               <div className="col-3" key={btn}>
-                <button className="btn btn-secondary w-100" onClick={() => handleClick(btn)}>
+                <button className="operator-btn"   onClick={() => {
+          if (btn === "C") return handleClear();
+          if (btn === "⌫") return handleBackspace();
+          return handleClick(btn);
+        }}>
+                  {btn}
+                </button>
+                
+              </div>
+            ))}
+            {["7", "8", "9", "*"].map((btn) => (
+              <div className="col-3" key={btn}>
+                <button className={`btn ${btn === "*" ? "operator-btn" : "number-btn"} `} onClick={() => handleClick(btn)}>
+                  {btn}
+                </button>
+                
+              </div>
+            ))}
+            {["4", "5", "6", "-"].map((btn) => (
+              <div className="col-3" key={btn}>
+                  <button className={`btn ${btn === "-" ? "operator-btn" : "number-btn"} `} onClick={() => handleClick(btn)}>
                   {btn}
                 </button>
               </div>
             ))}
-            {["4", "5", "6", "*"].map((btn) => (
+            {["1", "2", "3", "+"].map((btn) => (
               <div className="col-3" key={btn}>
-                <button className="btn btn-secondary w-100" onClick={() => handleClick(btn)}>
+                  <button className={`btn ${btn === "+" ? "operator-btn" : "number-btn"} `} onClick={() => handleClick(btn)}>
                   {btn}
                 </button>
               </div>
             ))}
-            {["1", "2", "3", "-"].map((btn) => (
-              <div className="col-3" key={btn}>
-                <button className="btn btn-secondary w-100" onClick={() => handleClick(btn)}>
-                  {btn}
-                </button>
-              </div>
-            ))}
-            {["0", ".", "=", "+"].map((btn) => (
+            {["00","0", ".", "="].map((btn) => (
               <div className="col-3" key={btn}>
                 <button
-                  className={`btn ${btn === "=" ? "btn-success" : "btn-secondary"} w-100`}
+                  className={`btn ${btn === "=" ? "equal-btn" : "number-btn"} `}
                   onClick={btn === "=" ? handleCalculate : () => handleClick(btn)}
                 >
                   {btn}
                 </button>
               </div>
             ))}
-            <div className="col-12">
-              <button className="btn btn-danger w-100" onClick={handleClear}>
-                C
-              </button>
-            </div>
+        
           </div>
         </div>
-      </div>
-    </div>
+      
+    
   );
 }
 

@@ -46,3 +46,14 @@
   color: #343a40;
 }
 
+.calculator-modal {
+  max-width: fit-content;  
+  max-height: fit-content;
+  margin: auto;            
+}
+
+.calculator-modal .modal-content {
+  width: auto;           
+  height: auto;
+}
+

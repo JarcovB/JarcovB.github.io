@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import Sidebar from './components/Sidebar';
 import './components/Sidebar.css';
+import './components/Calculator.css';
 import './App.css';
-
 import About from './pages/About';
 import Message from './components/Message';
 
@@ -13,8 +12,8 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <Router>
-      <div className={darkMode ? 'dark-theme' : 'light-theme'}>
+    <div className={darkMode ? 'dark-theme' : 'light-theme'}>
+      <Router>
         <button
           className="sidebar-toggle"
           style={{ left: collapsed ? '5px' : '150px' }}
@@ -35,9 +34,8 @@ function App() {
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
-
 export default App;
