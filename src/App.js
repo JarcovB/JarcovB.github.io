@@ -5,6 +5,7 @@ import './components/Sidebar.css';
 import './components/Calculator.css';
 import './App.css';
 import About from './pages/About';
+import WeatherPage from './pages/wheather';
 import Message from './components/Message';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Message />} />
             <Route path="/about" element={<About />} />
+            <Route path="/weather" element={<WeatherPage />} />
           </Routes>
         </div>
       </Router>

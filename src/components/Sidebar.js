@@ -19,6 +19,9 @@ function Sidebar({ collapsed, darkMode, setDarkMode }) {
             <li className="nav-item">
               <Link className="nav-link" to="/about">ℹ️ About</Link>
             </li>
+             <li className="nav-item">
+              <Link className="nav-link" to="/weather">🌤️ Weather</Link>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contact">✉️ Contact</Link>
             </li>
