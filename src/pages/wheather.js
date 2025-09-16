@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const API_KEY = "7025d812d9f56dccaa5616bb2d5b5230"; // Voeg hier je API key toe
+const API_KEY = "gbdnhxfdnfgtdnzfgngtnmz"; // Voeg hier je API key toe
 
 function WeatherPage() {
     const [weather, setWeather] = useState(null);
